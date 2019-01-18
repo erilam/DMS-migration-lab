@@ -35,17 +35,8 @@ For example, we pick **N. Viginia(us-east-1)** for our lab practice.
 * Once uploaded, in the AWS Cloud9 IDE console (bottom) find this PEM file and run ``` chmod 0400 XXXXX.pem ```
 
 ### Step 3:
-* create the LAMP stack in the default VPC
-
-* Create cloudformation stack: **AWS Console > Cloudformation > Create Stack > from S3 template >
-https://s3-ap-northeast-1.amazonaws.com/workshop-data-public/cloudformation-workshop-20180731-vpc-bastion-rds.cfn.yml**
-* For the stack configuration:
-- Stack Name: Whatever you want to name
-- Environment: dev
-- Availability Zone 1: Pick 1 AZ
-- Availability Zone 2: Pick a different AZ
-- EC2 Key Pair: Select the Key Pair Name you setup in Step 2.
-- DB Engine: mySql
+* create an all-in-one LAMP stack in the default VPC as the source database.
+* Create cloudformation stack: under source -> "LAMP-Stack-all-in-one.yaml"
 - DB User/DB Password/DB Name: **Please remember what you input or use the default**
 * Wait till the stack creation ready, the status will change to `CREATE_COMPLETE`
 * Setup mysql with username/password, create a database and table.
