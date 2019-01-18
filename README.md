@@ -1,2 +1,2 @@
 # DMS-migration-lab
-A lab to demonstrate how DMS work
+A lab to demonstrate how Database Migration Services work
