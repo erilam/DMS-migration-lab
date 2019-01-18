@@ -48,3 +48,12 @@ https://s3-ap-northeast-1.amazonaws.com/workshop-data-public/cloudformation-work
 - DB Engine: mySql
 - DB User/DB Password/DB Name: **Please remember what you input or use the default**
 * Wait till the stack creation ready, the status will change to `CREATE_COMPLETE`
+* Setup mysql with username/password, create a database and table.
+- ssh to the ec2: `ssh -i xxxx.pem ec2-user@your_ec2_ip`
+- `sudo mysql -u root`
+- `create database YOURE_DBName;`
+- `create user 'YOUR_DBUser'@'localhost' identified by 'YOUR_DBPassword';`
+- `grant all on YOURE_DBName.* to 'YOUR_DBUser' identified by 'YOUR_DBPassword';`
+- `use YOURE_DBName;`
+- `create table users (name VARCHAR(25), email VARCHAR(25), date DATE);
+exit`
