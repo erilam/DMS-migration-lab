@@ -52,4 +52,4 @@ exit`
 ### Step 4:
 * create an LAMP stack using VPC, EC2 and RDS as the destination database
 * create vpc using this cloudformation template: https://github.com/aws-samples/startup-kit-templates/blob/master/templates/vpc.cfn.yml
-* https://github.com/aws-samples/startup-kit-templates/blob/master/images/vpc.png
+* !https://github.com/aws-samples/startup-kit-templates/blob/master/images/vpc.png
