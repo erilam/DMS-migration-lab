@@ -48,3 +48,8 @@ For example, we pick **N. Viginia(us-east-1)** for our lab practice.
 - `use YOURE_DBName;`
 - `create table users (name VARCHAR(25), email VARCHAR(25), date DATE);
 exit`
+
+### Step 4:
+* create an LAMP stack using VPC, EC2 and RDS as the destination database
+* create vpc using this cloudformation template: https://github.com/aws-samples/startup-kit-templates/blob/master/templates/vpc.cfn.yml
+* https://github.com/aws-samples/startup-kit-templates/blob/master/images/vpc.png
