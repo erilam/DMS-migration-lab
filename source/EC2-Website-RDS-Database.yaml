@@ -537,8 +537,8 @@ Resources:
             sudo yum install php php-mysql mysql php-gd php-pod httpd git -y
             sudo /etc/init.d/httpd start
             cd /var/www/html
-            sudo curl -o index.php https://raw.githubusercontent.com/erilam/vpc-ec2-rds-lab/master/source/index.php
-            sudo curl -o awslogo.png https://raw.githubusercontent.com/erilam/vpc-ec2-rds-lab/master/source/awslogo.png
+            sudo curl -o index.php https://raw.githubusercontent.com/erilam/vpc-ec2-rds-lab/master/source/Dest-Website/index.php
+            sudo curl -o awslogo.png https://raw.githubusercontent.com/erilam/vpc-ec2-rds-lab/master/source/Dest-Website/awslogo.png
             echo '<?php' | sudo tee /var/www/html/db.properties
             echo '$host = "${MySQLDatabase.Endpoint.Address}";' | sudo tee -a /var/www/html/db.properties
             echo '$user = "${DBUser}";' | sudo tee -a /var/www/html/db.properties

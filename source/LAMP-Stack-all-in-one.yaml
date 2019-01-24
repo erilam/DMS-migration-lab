@@ -432,8 +432,8 @@ Resources:
             sudo /etc/init.d/httpd start
             sudo /etc/init.d/mysqld start
             cd /var/www/html
-            sudo curl -o index.php https://raw.githubusercontent.com/erilam/vpc-ec2-rds-lab/master/source/index.php
-            sudo curl -o awslogo.png https://raw.githubusercontent.com/erilam/vpc-ec2-rds-lab/master/source/awslogo.png
+            sudo curl -o index.php https://raw.githubusercontent.com/erilam/DMS-migration-lab/master/source/Src-Website/index.php
+            sudo curl -o awslogo.png https://raw.githubusercontent.com/erilam/vpc-ec2-rds-lab/master/source/Src-Website/awslogo.png
             echo '<?php' | sudo tee /var/www/html/db.properties
             echo '$host = "localhost";' | sudo tee -a /var/www/html/db.properties
             echo '$user = "${DBUser}";' | sudo tee -a /var/www/html/db.properties
