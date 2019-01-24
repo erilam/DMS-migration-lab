@@ -36,7 +36,7 @@ For example, we pick **N. Viginia(us-east-1)** for our lab practice.
 
 ### Step 3:
 * create an all-in-one LAMP stack in the default VPC as the source database.
-* Create cloudformation stack: under source -> "LAMP-Stack-all-in-one.yaml"
+* Create an all-in-one LAMP stack in an EC2 using this cloudformation template: https://raw.githubusercontent.com/erilam/DMS-migration-lab/master/source/LAMP-Stack-all-in-one.yaml
 - DB User/DB Password/DB Name: **Please remember what you input or use the default**
 * Wait till the stack creation ready, the status will change to `CREATE_COMPLETE`
 * Setup mysql with username/password, create a database and table.
@@ -51,5 +51,17 @@ exit`
 
 ### Step 4:
 * create an LAMP stack using VPC, EC2 and RDS as the destination database
-* create vpc using this cloudformation template: https://github.com/aws-samples/startup-kit-templates/blob/master/templates/vpc.cfn.yml
+* create VPC using this cloudformation template: https://raw.githubusercontent.com/erilam/DMS-migration-lab/master/source/vpc.cfn.yml
 * ![vpc](https://github.com/aws-samples/startup-kit-templates/blob/master/images/vpc.png)
+* (Optional) create bastion host using this cloudformation template: https://raw.githubusercontent.com/aws-samples/startup-kit-templates/master/vpc-bastion.cfn.yml
+* ![bastion host](https://raw.githubusercontent.com/aws-samples/startup-kit-templates/master/images/vpc_bastion.png)
+* create Website Server and RDS using this cloudformation template: https://raw.githubusercontent.com/erilam/DMS-migration-lab/master/source/EC2-Website-RDS-Database.yaml
+- DB User/DB Password/DB Name: **Please remember what you input or use the default**
+* Wait until Cloudformation CREATE_COMPLETE before move forward
+
+### Step 9:
+* Create a table in MySQL of RDS
+* From Cloud9, SSH to the Website EC2 (or Bastion Host:) ssh -i XXXX.pem ec2-user@YOUR_WEBEC2_Public_IP
+* Access the RDS MySQL: `mysql -h <RDS ENDPOINT> -P 3306 -u YOUR_DBUSER -p`
+* Select the DB that your have created: `mysql> use YOUR_DBNAME`
+* create the user table `mysql> CREATE TABLE users (name VARCHAR(25), email VARCHAR(25), date DATE);`
